@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENAI | Lista de Entradas/Saídas e Créditos - Bancada Festo OSR241T</title>
+    <!-- Fontes e ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== CSS GLOBAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fb;
+            color: #1e2b3c;
+            line-height: 1.5;
+        }
+
+        /* Cabeçalho estilo SENAI */
+        .header {
+            background: linear-gradient(135deg, #003366 0%, #002244 100%);
+            color: white;
+            padding: 1.2rem 0;
+            border-bottom: 4px solid #e63946;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .header-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            border: 2px dashed #66b0ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a3c2e0;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 0.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .logo-placeholder i {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+            color: #66b0ff;
+        }
+
+        .logo-placeholder span {
+            display: block;
+            font-size: 0.7rem;
+            opacity: 0.8;
+        }
+
+        .titulo-bancada {
+            font-weight: 300;
+            font-size: 1.2rem;
+            border-left: 2px solid #e63946;
+            padding-left: 1rem;
+        }
+        .titulo-bancada strong {
+            font-weight: 700;
+            display: block;
+            font-size: 1.6rem;
+        }
+
+        .header-logo-direita {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.1);
+            border: 2px dashed #66b0ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a3c2e0;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+
+        /* Menu de navegação */
+        .nav-bar {
+            background-color: #002b4d;
+            border-bottom: 1px solid #114477;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-menu {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 0.25rem;
+        }
+
+        .nav-item {
+            padding: 0.8rem 1.2rem;
+            font-weight: 600;
+            color: #e0e9f5;
+            cursor: pointer;
+            transition: 0.2s;
+            border-bottom: 3px solid transparent;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-item i {
+            margin-right: 8px;
+            color: #66b0ff;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: white;
+            border-bottom-color: #e63946;
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        .nav-item.active {
+            border-bottom-color: #e63946;
+            background-color: rgba(230, 57, 70, 0.15);
+        }
+
+        /* Container principal */
+        .main-container {
+            max-width: 1300px;
+            margin: 2.5rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2rem;
+        }
+
+        /* Área de conteúdo principal */
+        .content-area {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,40,80,0.08);
+            border: 1px solid #e6ecf2;
+        }
+
+        .page-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #003366;
+            margin-bottom: 0.5rem;
+            border-left: 8px solid #e63946;
+            padding-left: 1.2rem;
+        }
+
+        .page-subtitle {
+            color: #e63946;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Espaço reservado para foto */
+        .main-image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #eef4ff;
+            border: 3px dashed #003366;
+            border-radius: 20px;
+            margin: 1.5rem 0 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: #003366;
+            font-weight: 600;
+            flex-direction: column;
+        }
+
+        .main-image-placeholder i {
+            font-size: 3rem;
+            color: #66b0ff;
+        }
+
+        /* Tabelas de I/O */
+        .io-section {
+            margin-bottom: 3rem;
+        }
+
+        .io-section h2 {
+            color: #003366;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .io-section h2 i {
+            color: #e63946;
+        }
+
+        .io-tabela {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin: 1rem 0 2rem;
+        }
+
+        .io-tabela th {
+            background: #003366;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .io-tabela td {
+            padding: 1rem;
+            border-bottom: 1px solid #e6ecf2;
+        }
+
+        .io-tabela tr:last-child td {
+            border-bottom: none;
+        }
+
+        .io-tabela tr:hover {
+            background: #f5f9ff;
+        }
+
+        .io-tabela .gpio-pin {
+            background: #e63946;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+
+        .io-tabela .tipo-entrada {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .io-tabela .tipo-saida {
+            color: #e67e22;
+            font-weight: 600;
+        }
+
+        .badge-esp32 {
+            background: #e63946;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Cards de resumo I/O */
+        .io-resumo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .io-resumo-card {
+            background: #f9fcff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid #d9e2ef;
+        }
+
+        .io-resumo-card i {
+            font-size: 2.5rem;
+            color: #e63946;
+            margin-bottom: 0.8rem;
+        }
+
+        .io-resumo-card h3 {
+            color: #003366;
+            margin-bottom: 0.5rem;
+        }
+
+        .io-resumo-card .numero {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #003366;
+        }
+
+        /* Página de créditos */
+        .creditos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .credito-card {
+            background: #f9fcff;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid #d9e2ef;
+            transition: transform 0.2s;
+        }
+
+        .credito-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,51,102,0.1);
+        }
+
+        .credito-card i {
+            font-size: 3rem;
+            color: #e63946;
+            margin-bottom: 1rem;
+        }
+
+        .credito-card h3 {
+            color: #003366;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .credito-card .funcao {
+            color: #e63946;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .credito-card p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .equipe-lista {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .equipe-lista li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid #e6ecf2;
+        }
+
+        .equipe-lista li:last-child {
+            border-bottom: none;
+        }
+
+        .equipe-lista .avatar-placeholder {
+            width: 50px;
+            height: 50px;
+            background: #eef4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #003366;
+            border: 2px dashed #66b0ff;
+        }
+
+        .agradecimentos {
+            background: #eef4ff;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            border-left: 6px solid #e63946;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem;
+            box-shadow: 0 10px 30px rgba(0,40,80,0.08);
+            border: 1px solid #e6ecf2;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            color: #003366;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 3px solid #e63946;
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar-image-placeholder {
+            width: 100%;
+            height: 150px;
+            background: #eef4ff;
+            border: 2px dashed #003366;
+            border-radius: 16px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #003366;
+            gap: 0.5rem;
+        }
+
+        .sidebar-image-placeholder i {
+            font-size: 2.5rem;
+            color: #66b0ff;
+        }
+
+        .info-box {
+            background: #eef4ff;
+            padding: 1.2rem;
+            border-radius: 14px;
+            margin: 1rem 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #002244;
+            color: #a3c2e0;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 4px solid #e63946;
+            text-align: center;
+        }
+        #botao{
+            width: 110px;
+            height: auto;
+        }
+        #verde{
+            width: 250px;
+            height: auto;
+        }
+        #pi{
+            width: 80px;
+            height: auto;
+        }
+        #dd{
+            width: 80px;
+            height: auto;
+        }
+        #logosenai{
+            width: 55px;
+            height: auto;
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .io-resumo-grid, .creditos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-area">
+                <!-- ESPAÇO RESERVADO PARA LOGO PRINCIPAL -->
+                <div class="logo-placeholder">
+                    <div>
+                        <span><img src="/imagem/senai-768x432.jpeg" alt="logosenai" id="logosenai"></span>
+                    </div>
+                </div>
+                <div class="titulo-bancada">
+                    <strong>Bancada Festo OSR241T</strong>
+                    Automação com ESP32
+                </div>
+            </div>
+            <!-- ESPAÇO RESERVADO PARA LOGO SECUNDÁRIO -->
+            <div class="header-logo-direita">
+                <div>
+                    <i class="fas fa-industry"></i>
+                    <span style="display: block; font-size: 0.5rem;">FESTO</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <ul class="nav-menu">
+            <li class="nav-item" data-target="inicio"><i class="fas fa-home"></i> Início</li>
+            <li class="nav-item" data-target="estrutura"><i class="fas fa-cogs"></i> Estrutura e Função</li>
+            <li class="nav-item active" data-target="io"><i class="fas fa-list"></i> Lista de entradas e saídas</li>
+            <li class="nav-item" data-target="creditos"><i class="fas fa-star"></i> Créditos</li>
+        </ul>
+    </nav>
+
+    <main class="main-container">
+        <section class="content-area">
+            <!-- ===== LISTA DE ENTRADAS E SAÍDAS ===== -->
+            <h1 class="page-title">Lista de Entradas e Saídas</h1>
+            <div class="page-subtitle">
+                <i class="fas fa-microchip"></i> Mapeamento completo dos pinos ESP32
+            </div>
+
+            <!-- Espaço reservado para foto do esquema elétrico -->
+            <div class="main-image-placeholder">
+                <span><img src="/imagem/botao.jpg" alt="" id="botao"> <img src="/imagem/verde.jpg" alt="" id="verde"></span>
+            </div>
+
+            <!-- Resumo I/O -->
+            <div class="io-resumo-grid">
+                <div class="io-resumo-card">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h3>Entradas Digitais</h3>
+                    <div class="numero">5</div>
+                    <p>Sensores, botões, fim de curso</p>
+                </div>
+                <div class="io-resumo-card">
+                    <i class="fas fa-arrow-circle-left"></i>
+                    <h3>Saídas Digitais</h3>
+                    <div class="numero">7</div>
+                    <p>Relés, válvulas, LEDs</p>
+                </div>
+                <div class="io-resumo-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Entradas Analógicas</h3>
+                    <div class="numero">4</div>
+                    <p>Potenciômetros, pressão</p>
+                </div>
+            </div>
+
+          <!-- Tabela de Entradas -->
+<div class="io-section">
+    <h2><i class="fas fa-arrow-circle-right"></i> Entradas (Inputs) - Sensores e Comandos</h2>
+    <table class="io-tabela">
+        <thead>
+            <tr>
+                <th>Tag</th>
+                <th>GPIO ESP32</th>
+                <th>Tipo</th>
+                <th>Descrição</th>
+                <th>Componente</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>I1</strong></td>
+                <td><span class="gpio-pin">GPIO25</span></td>
+                <td><span class="tipo-entrada">Digital</span></td>
+                <td>DIREITA</td>
+                <td>Botão de comando direito</td>
+            </tr>
+            <tr>
+                <td><strong>I2</strong></td>
+                <td><span class="gpio-pin">GPIO32</span></td>
+                <td><span class="tipo-entrada">Digital</span></td>
+                <td>INICIO/ESQUERDA</td>
+                <td>Botão de comando esquerdo</td>
+            </tr>
+            <tr>
+                <td><strong>I3</strong></td>
+                <td><span class="gpio-pin">GPIO33</span></td>
+                <td><span class="tipo-entrada">Digital</span></td>
+                <td>MEIO</td>
+                <td>Botão de comando central</td>
+            </tr>
+            <tr>
+                <td><strong>I4</strong></td>
+                <td><span class="gpio-pin">GPIO34</span></td>
+                <td><span class="tipo-entrada">Digital</span></td>
+                <td>SAIDA</td>
+                <td>Sensor de posição</td>
+            </tr>
+            <tr>
+                <td><strong>I5</strong></td>
+                <td><span class="gpio-pin">GPIO39</span></td>
+                <td><span class="tipo-entrada">Digital</span></td>
+                <td>RETORNO</td>
+                <td>Sensor de posição</td>
+            </tr>
+           
+        </tbody>
+    </table>
+</div>
+
+            <!-- Tabela de Saídas -->
+            <div class="io-section">
+                <h2><i class="fas fa-arrow-circle-left"></i> Saídas (Outputs) - Atuadores e Indicadores</h2>
+                <table class="io-tabela">
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>GPIO ESP32</th>
+                            <th>Tipo</th>
+                            <th>Descrição</th>
+                            <th>Componente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Q1</strong></td>
+                            <td><span class="gpio-pin">GPIO23</span></td>
+                            <td><span class="tipo-saida">Digital (Relé)</span></td>
+                            <td>Segurar peça (Ligar/Desligar)</td>
+                            <td>Atuador de fixação</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q2</strong></td>
+                            <td><span class="gpio-pin">GPIO18</span></td>
+                            <td><span class="tipo-saida">Digital (Relé)</span></td>
+                            <td>Botão esquerda (Ligar/Desligar)</td>
+                            <td>Botão de comando esquerdo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q3</strong></td>
+                            <td><span class="gpio-pin">GPIO16</span></td>
+                            <td><span class="tipo-saida">Digital (Relé)</span></td>
+                            <td>Botão meio (Ligar/Desligar)</td>
+                            <td>Botão de comando central</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q4</strong></td>
+                            <td><span class="gpio-pin">GPIO17</span></td>
+                            <td><span class="tipo-saida">Digital (Relé)</span></td>
+                            <td>Prensa (Ligar/Desligar)</td>
+                            <td>Atuador de prensagem</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q5</strong></td>
+                            <td><span class="gpio-pin">GPIO19</span></td>
+                            <td><span class="tipo-saida">Digital (Relé)</span></td>
+                            <td>Botão direita (Ligar/Desligar)</td>
+                            <td>Botão de comando direito</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q6</strong></td>
+                            <td><span class="gpio-pin">GPIO22</span></td>
+                            <td><span class="tipo-saida">Digital (Relé)</span></td>
+                            <td>Plataforma de baixo - Avança para saída</td>
+                            <td>Atuador de plataforma</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q7</strong></td>
+                            <td><span class="gpio-pin">GPIO21</span></td>
+                            <td><span class="tipo-saida">Digital (Relé)</span></td>
+                            <td>Plataforma de retorno (Ligar/Desligar)</td>
+                            <td>Atuador de retorno</td>
+                        </tr>
+                     
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Observações importantes -->
+            <div style="background: #eef4ff; border-radius: 16px; padding: 1.5rem; margin: 2rem 0;">
+                <h3 style="color: #003366; margin-bottom: 1rem;"><i class="fas fa-exclamation-triangle" style="color: #e63946;"></i> Observações importantes:</h3>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle" style="color: #2ecc71;"></i> Todas as entradas digitais utilizam divisores de tensão (24V → 3.3V)</li>
+                    <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle" style="color: #2ecc71;"></i> Saídas digitais utilizam shield de relés ou optoacopladores para isolação</li>
+                    <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle" style="color: #2ecc71;"></i> Entradas analógicas: GPIO34-39 são recomendadas (input only)</li>
+                    <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle" style="color: #2ecc71;"></i> Utilize resistores pull-down de 10kΩ nas entradas</li>
+                </ul>
+            </div>
+
+            <!-- Parceiros -->
+            <div style="display: flex; justify-content: center; gap: 3rem; margin: 3rem 0;">
+                <div style="text-align: center;">
+                    <div class="logo-placeholder" style="width: 100px; height: 100px; background: #f0f6fd;">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <p style="margin-top: 0.5rem; font-weight: 600;">Festo Didactic</p>
+                </div>
+                <div style="text-align: center;">
+                    <div class="logo-placeholder" style="width: 100px; height: 100px; background: #f0f6fd;">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <p style="margin-top: 0.5rem; font-weight: 600;">SENAI</p>
+                </div>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h3><i class="fas fa-microchip"></i> ESP32 Pinout</h3>
+            
+            <!-- Espaço reservado para imagem do pinout -->
+            <div class="sidebar-image-placeholder">
+                <span><img src="/imagem/pinout.jpg" alt="" id="pi"></span>
+            </div>
+
+            <div class="info-box">
+                <p><i class="fas fa-bolt"></i> <strong>Tensão:</strong> 3.3V (lógica)</p>
+                <p><i class="fas fa-exclamation-triangle"></i> <strong>Cuidado:</strong> Pinos 5V não tolerantes</p>
+                <p><i class="fas fa-memory"></i> <strong>Conversor AD:</strong> 12 bits</p>
+            </div>
+
+            <!-- Segundo espaço para foto do shield -->
+            <div class="sidebar-image-placeholder" style="height: 120px;">
+                <span><img src="/imagem/ddd.jpg" alt="" id="dd"></span>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <h4 style="color: #003366;">Cores padronizadas:</h4>
+                <ul style="list-style: none;">
+                    <li><span style="color: #27ae60;">●</span> Entradas: Verde</li>
+                    <li><span style="color: #e67e22;">●</span> Saídas: Laranja</li>
+                    <li><span style="color: #e63946;">●</span> Alimentação: Vermelho</li>
+                    <li><span style="color: #34495e;">●</span> GND: Preto</li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <p>SENAI - Serviço Nacional de Aprendizagem Industrial</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Bancada Festo OSR241T - Automação com ESP32 © 2024</p>
+    </footer>
+</body>
+</html>

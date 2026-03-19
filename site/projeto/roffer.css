@@ -1,0 +1,41 @@
+.decision-area {
+    background: #f4f7fb;
+    padding: 2rem;
+    border-radius: 20px;
+    margin-top: 2rem;
+}
+
+.decision-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.decision-box label {
+    background: white;
+    padding: 0.8rem;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+#verificarBtn {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#verificarBtn:hover {
+    background: #e63946;
+}
+
+#resultado {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}

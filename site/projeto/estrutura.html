@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENAI | Estrutura e Função - Bancada Festo OSR241T</title>
+    <!-- Fontes e ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== CSS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fb;
+            color: #1e2b3c;
+            line-height: 1.5;
+        }
+
+        /* Cabeçalho estilo SENAI */
+        .header {
+            background: linear-gradient(135deg, #003366 0%, #002244 100%);
+            color: white;
+            padding: 1.2rem 0;
+            border-bottom: 4px solid #e63946;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .header-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Espaço reservado para logo */
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a3c2e0;
+        }
+        
+        .titulo-bancada strong {
+            font-weight: 700;
+            display: block;
+            font-size: 1.6rem;
+        }
+
+        /* Espaço reservado para logo secundário */
+        .header-logo-direita {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.1);
+            border: 2px dashed #66b0ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a3c2e0;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+
+        /* Menu de navegação */
+        .nav-bar {
+            background-color: #002b4d;
+            border-bottom: 1px solid #114477;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-menu {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 0.25rem;
+        }
+
+        .nav-item {
+            padding: 0.8rem 1.2rem;
+            font-weight: 600;
+            color: #e0e9f5;
+            cursor: pointer;
+            transition: 0.2s;
+            border-bottom: 3px solid transparent;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-item i {
+            margin-right: 8px;
+            color: #66b0ff;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: white;
+            border-bottom-color: #e63946;
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        .nav-item.active {
+            border-bottom-color: #e63946;
+            background-color: rgba(230, 57, 70, 0.15);
+        }
+
+        /* Container principal */
+        .main-container {
+            max-width: 1300px;
+            margin: 2.5rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2rem;
+        }
+
+        /* Área de conteúdo principal */
+        .content-area {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,40,80,0.08);
+            border: 1px solid #e6ecf2;
+        }
+
+        .page-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #003366;
+            margin-bottom: 0.5rem;
+            border-left: 8px solid #e63946;
+            padding-left: 1.2rem;
+        }
+
+        .page-subtitle {
+            color: #e63946;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Espaço reservado para foto principal */
+        .main-image-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #eef4ff;
+            border: 3px dashed #003366;
+            border-radius: 20px;
+            margin: 1.5rem 0 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: #003366;
+            font-weight: 600;
+            flex-direction: column;
+        }
+
+        .main-image-placeholder i {
+            font-size: 3rem;
+            color: #66b0ff;
+        }
+
+        /* Cards de estrutura */
+        .estrutura-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .estrutura-card {
+            background: #f9fcff;
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid #d9e2ef;
+            transition: transform 0.2s;
+        }
+
+        .estrutura-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,51,102,0.1);
+        }
+
+        .estrutura-card h3 {
+            color: #003366;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #e63946;
+            padding-bottom: 0.5rem;
+        }
+
+        .estrutura-card h3 i {
+            color: #e63946;
+        }
+
+        .estrutura-card ul {
+            list-style: none;
+        }
+
+        .estrutura-card li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .estrutura-card li i {
+            color: #2ecc71;
+            margin-top: 3px;
+            min-width: 18px;
+        }
+
+        .componente-destaque {
+            background: #e8f0fe;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 600;
+            color: #003366;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Tabela de componentes */
+        .tabela-componentes {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .tabela-componentes th {
+            background: #003366;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tabela-componentes td {
+            padding: 1rem;
+            border-bottom: 1px solid #e6ecf2;
+        }
+
+        .tabela-componentes tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tabela-componentes tr:hover {
+            background: #f5f9ff;
+        }
+
+        .badge-esp32 {
+            background: #e63946;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Fluxo de trabalho */
+        .fluxo-workflow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .workflow-item {
+            flex: 1;
+            min-width: 150px;
+            background: white;
+            padding: 1.2rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 2px solid #e6ecf2;
+            position: relative;
+        }
+
+        .workflow-item i {
+            font-size: 2rem;
+            color: #e63946;
+            margin-bottom: 0.5rem;
+        }
+
+        .workflow-item .seta {
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #003366;
+            font-size: 1.5rem;
+        }
+
+        .workflow-item:last-child .seta {
+            display: none;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem;
+            box-shadow: 0 10px 30px rgba(0,40,80,0.08);
+            border: 1px solid #e6ecf2;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            color: #003366;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 3px solid #e63946;
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar-image-placeholder {
+            width: 100%;
+            height: 150px;
+            background: #eef4ff;
+            border: 2px dashed #003366;
+            border-radius: 16px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #003366;
+            gap: 0.5rem;
+        }
+
+        .sidebar-image-placeholder i {
+            font-size: 2.5rem;
+            color: #66b0ff;
+        }
+
+        .info-box {
+            background: #eef4ff;
+            padding: 1.2rem;
+            border-radius: 14px;
+            margin: 1rem 0;
+        }
+
+        .info-box p {
+            margin: 0.5rem 0;
+            font-weight: 500;
+        }
+
+        .info-box i {
+            color: #e63946;
+            width: 24px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #002244;
+            color: #a3c2e0;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 4px solid #e63946;
+            text-align: center;
+        }
+        
+        #logoes{
+            width: 78px;
+            height: auto;
+        }
+        
+        #cima{
+            width: 430px;
+            height: auto;
+        }
+        
+        #esp{
+            width: 270px;
+            height: auto;
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .estrutura-grid {
+                grid-template-columns: 1fr;
+            }
+            .fluxo-workflow {
+                flex-direction: column;
+            }
+            .workflow-item .seta {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-area">
+                <!-- ESPAÇO RESERVADO PARA LOGO PRINCIPAL -->
+                <div class="logo-placeholder">
+                    <div>
+                        <span><img src="/imagem/senai-768x432.jpeg" alt="Logo SENAI" id="logoes"></span>
+                    </div>
+                </div>
+                <div class="titulo-bancada">
+                    <strong>Bancada Festo OSR241T</strong>
+                    Automação com ESP32
+                </div>
+            </div>
+            <!-- ESPAÇO RESERVADO PARA LOGO SECUNDÁRIO -->
+            <div class="header-logo-direita">
+                <div>
+                    <i class="fas fa-industry"></i>
+                    <span style="display: block; font-size: 0.5rem;">FESTO</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <ul class="nav-menu">
+            <li class="nav-item" data-target="inicio"><i class="fas fa-home"></i> Início</li>
+            <li class="nav-item active" data-target="estrutura"><i class="fas fa-cogs"></i> Estrutura e Função</li>
+            <li class="nav-item" data-target="io"><i class="fas fa-list"></i> Lista de entradas e saídas</li>
+            <li class="nav-item" data-target="creditos"><i class="fas fa-star"></i> Créditos</li>
+        </ul>
+    </nav>
+
+    <main class="main-container">
+        <section class="content-area">
+            <h1 class="page-title">Estrutura e Função</h1>
+            <div class="page-subtitle">
+                <i class="fas fa-microchip"></i> Bancada Festo OSR241T controlada por ESP32
+            </div>
+            
+            <!-- ESPAÇO RESERVADO PARA FOTO PRINCIPAL DA ESTRUTURA -->
+            <div class="main-image-placeholder">
+                <span><img src="/imagem/cima.jpg" alt="Vista superior da bancada" id="cima"></span>
+            </div>
+
+            <div class="estrutura-grid">
+                <div class="estrutura-card">
+                    <h3><i class="fas fa-cube"></i> Módulos da Bancada</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>Módulo de Alimentação:</strong> Interface com ESP32 e fonte 24V/5V</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Módulo de Atuadores:</strong> Cilindros pneumáticos dupla ação</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Módulo de Sensores:</strong> Fim de curso, indutivos, ópticos</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Módulo de Controle:</strong> ESP32 com shield de relés</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Módulo de IHM:</strong> Interface web via Wi-Fi</li>
+                    </ul>
+                    <div class="componente-destaque">
+                        <i class="fas fa-microchip"></i> ESP32: Central de processamento
+                    </div>
+                </div>
+
+                <div class="estrutura-card">
+                    <h3><i class="fas fa-tasks"></i> Funções Principais</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>Separação de peças:</strong> Controle de cilindros por sensores</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Transporte:</strong> Atuação sequencial pneumática</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Identificação:</strong> Leitura de sensores (peças metálicas/não metálicas)</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Classificação:</strong> Lógica programada no ESP32</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Monitoramento:</strong> Dashboard web em tempo real</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tabela de componentes detalhada -->
+            <h2 style="color: #003366; margin: 2rem 0 1rem;">🔧 Componentes Estruturais</h2>
+            <table class="tabela-componentes">
+                <thead>
+                    <tr>
+                        <th>Componente</th>
+                        <th>Quantidade</th>
+                        <th>Função</th>
+                        <th>Conexão ESP32</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cilindro pneumático dupla ação</strong></td>
+                        <td>4</td>
+                        <td>Atuação mecânica (empurrar/levantar)</td>
+                        <td>Via relé 24V</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Válvula direcional 5/2</strong></td>
+                        <td>4</td>
+                        <td>Controle do fluxo de ar</td>
+                        <td>Sinais 24V do shield</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sensor fim de curso (magnético)</strong></td>
+                        <td>8</td>
+                        <td>Detectar posição do cilindro</td>
+                        <td>Entradas digitais (3.3V com divisor)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sensor indutivo</strong></td>
+                        <td>2</td>
+                        <td>Detectar peças metálicas</td>
+                        <td>Entradas digitais</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sensor óptico</strong></td>
+                        <td>2</td>
+                        <td>Detectar presença/ausência</td>
+                        <td>Entradas digitais</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ESP32</strong></td>
+                        <td>1</td>
+                        <td>Controle e lógica de automação</td>
+                        <td>Central</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Shield de relés 8 canais</strong></td>
+                        <td>1</td>
+                        <td>Isolamento e acionamento 24V</td>
+                        <td>Saídas digitais 5V</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Fluxo de trabalho -->
+            <h2 style="color: #003366; margin: 2rem 0 1rem;">⚙️ Fluxo de Funcionamento</h2>
+            <div class="fluxo-workflow">
+                <div class="workflow-item">
+                    <i class="fas fa-microchip"></i>
+                    <h4>ESP32</h4>
+                    <p>Processa lógica</p>
+                    <span class="seta"><i class="fas fa-arrow-right"></i></span>
+                </div>
+                <div class="workflow-item">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Shield Relés</h4>
+                    <p>Ativa válvulas</p>
+                    <span class="seta"><i class="fas fa-arrow-right"></i></span>
+                </div>
+                <div class="workflow-item">
+                    <i class="fas fa-wind"></i>
+                    <h4>Atuadores</h4>
+                    <p>Movimentam peças</p>
+                    <span class="seta"><i class="fas fa-arrow-right"></i></span>
+                </div>
+                <div class="workflow-item">
+                    <i class="fas fa-eye"></i>
+                    <h4>Sensores</h4>
+                    <p>Feedback</p>
+                    <span class="seta"><i class="fas fa-arrow-right"></i></span>
+                </div>
+                <div class="workflow-item">
+                    <i class="fas fa-microchip"></i>
+                    <h4>ESP32</h4>
+                    <p>Atualiza IHM</p>
+                </div>
+            </div>
+
+            <!-- Especificações técnicas -->
+            <div style="background: #003366; color: white; padding: 2rem; border-radius: 20px; margin: 2rem 0;">
+                <h3 style="color: white; margin-bottom: 1rem;"><i class="fas fa-clipboard-list"></i> Especificações Técnicas</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <p><i class="fas fa-tachometer-alt" style="color: #e63946;"></i> Pressão de trabalho: 600 kPa (6 bar)</p>
+                        <p><i class="fas fa-bolt" style="color: #e63946;"></i> Alimentação: 24V / 5V (ESP32)</p>
+                        <p><i class="fas fa-microchip" style="color: #e63946;"></i> Controlador: ESP32-WROOM-32</p>
+                    </div>
+                    <div>
+                        <p><i class="fas fa-wifi" style="color: #e63946;"></i> Conectividade: Wi-Fi 2.4GHz, Bluetooth</p>
+                        <p><i class="fas fa-memory" style="color: #e63946;"></i> Memória: 4MB Flash, 520KB RAM</p>
+                        <p><i class="fas fa-tachometer-alt" style="color: #e63946;"></i> Clock: 240 MHz</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h3><i class="fas fa-cogs"></i> Estrutura Física</h3>
+            
+            <!-- Espaço reservado para foto do módulo -->
+            <div class="sidebar-image-placeholder">
+                <span><img src="/imagem/WhatsApp Image 2026-03-18 at 08.39.50.jpeg" alt="Módulo ESP32" id="esp"></span>
+            </div>
+
+            <div class="info-box">
+                <p><i class="fas fa-check-circle"></i> <strong>Dimensões:</strong> 800mm x 600mm</p>
+                <p><i class="fas fa-check-circle"></i> <strong>Peso:</strong> Aprox. 25kg</p>
+                <p><i class="fas fa-check-circle"></i> <strong>Materiais:</strong> Alumínio, aço inox</p>
+            </div>
+
+            <!-- Segundo espaço para foto -->
+            <div class="sidebar-image-placeholder" style="height: 120px;">
+                <i class="fas fa-project-diagram"></i>
+                <span>Diagrama pneumático</span>
+            </div>
+
+            <!-- Lista de atuadores -->
+            <div style="margin-top: 1.5rem;">
+                <h4 style="color: #003366; margin-bottom: 0.8rem;">Atuadores disponíveis:</h4>
+                <ul style="list-style: none;">
+                    <li><i class="fas fa-arrow-right" style="color: #e63946;"></i> 2x Cilindro simples ação</li>
+                    <li><i class="fas fa-arrow-right" style="color: #e63946;"></i> 2x Cilindro dupla ação</li>
+                    <li><i class="fas fa-arrow-right" style="color: #e63946;"></i> 1x Atuador rotativo</li>
+                    <li><i class="fas fa-arrow-right" style="color: #e63946;"></i> 2x Ventosas (vácuo)</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 1.5rem; background: #e63946; color: white; padding: 1rem; border-radius: 12px;">
+                <i class="fas fa-lightbulb"></i>
+                <strong>Dica:</strong> A estrutura modular permite reconfiguração para diferentes processos didáticos.
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div style="max-width: 1300px; margin: 0 auto;">
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;"><i class="fas fa-graduation-cap"></i> SENAI - Serviço Nacional de Aprendizagem Industrial</p>
+            <p>Bancada Didática Festo OSR241T | Versão 2.0 - Controlador ESP32</p>
+            <p style="margin-top: 1rem; opacity: 0.7;">© 2024 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

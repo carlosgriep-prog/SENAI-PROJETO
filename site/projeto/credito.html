@@ -1,0 +1,275 @@
+<!-- PÁGINA CRÉDITOS -->
+<link rel="stylesheet" href="/projeto/prr.css" />
+<main id="creditos" class="main-container pagina">
+  <section class="content-area">
+    <h1 class="page-title">Créditos</h1>
+    <div class="page-subtitle">
+      <i class="fas fa-star"></i> Equipe de desenvolvimento do projeto
+    </div>
+
+  
+      >
+    </div>
+
+    <div class="creditos-grid">
+      <div class="credito-card">
+        <i class="fas fa-user-graduate"
+          ><img
+            src="/imagem/b80a14cc-2225-46c8-9886-540e3e0b15e6.jpg"
+            alt=""
+            id="carlosbigode"
+        /></i>
+        <h3>Carlos Henrique<br />de Oliveira Griep</h3>
+        <div class="funcao">Lógica de Programação ESP32</div>
+        <p>
+          Responsável pela implementação do código de controle e sequenciamento
+          dos atuadores pneumáticos.
+        </p>
+      </div>
+      <div class="credito-card">
+        <i class="fas fa-user-graduate"
+          ><img
+            src="/imagem/b42c0268-364a-4a16-a659-9d58090efb91.jpg"
+            alt=""
+            id="lucasbigode"
+        /></i>
+        <h3>Lucas Barros<br />da Silva</h3>
+        <div class="funcao">Integração de Hardware</div>
+        <p>
+          Responsável pela conexão dos sensores, atuadores e shield de relés com
+          o ESP32.
+        </p>
+      </div>
+      <div class="credito-card">
+        <i class="fas fa-user-graduate"
+          ><img
+            src="/imagem/imagem do sanchez.jfif"
+            alt=""
+            id="sanchesbigode"
+        /></i>
+        <h3>Matheus Guilherme<br />Santos Sanche</h3>
+        <div class="funcao">Desenvolvimento IHM Web</div>
+        <p>
+          Responsável pela interface web para monitoramento e controle da
+          bancada via Wi-Fi.
+        </p>
+      </div>
+      <div class="credito-card">
+        <i class="fas fa-user-graduate"
+          ><img
+            src="/imagem/fcb802f1-7a72-4d21-9b68-4ce0f598aec8.jpg"
+            alt=""
+            id="crisbigode"
+        /></i>
+        <h3>Christian Pereira<br />da Silva</h3>
+        <div class="funcao">Documentação e Testes</div>
+        <p>
+          Responsável pela documentação técnica, manuais e validação dos testes
+          da bancada.
+        </p>
+      </div>
+    </div>
+
+    <!-- Lista detalhada da equipe -->
+    <h2 style="color: #003366; margin: 2rem 0 1rem">👥 Membros da Equipe</h2>
+    <ul class="equipe-lista">
+      <li>
+        <div class="avatar-placeholder">
+          <i class="fas fa-user"></i>
+        </div>
+        <div>
+          <strong>Carlos Henrique de Oliveira Griep</strong> - Programação ESP32
+          (C++ / Arduino IDE)
+          <p style="font-size: 0.9rem; color: #666; margin-top: 0.3rem">
+            Responsável pela lógica de automação e sequenciamento dos cilindros
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="avatar-placeholder">
+          <i class="fas fa-user"></i>
+        </div>
+        <div>
+          <strong>Lucas Barros da Silva</strong> - Hardware e Conexões
+          <p style="font-size: 0.9rem; color: #666; margin-top: 0.3rem">
+            Responsável pela montagem elétrica e integração dos
+            sensores/atuadores
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="avatar-placeholder">
+          <i class="fas fa-user"></i>
+        </div>
+        <div>
+          <strong>Matheus Guilherme Santos Sanche</strong> - Interface Web (IHM)
+          <p style="font-size: 0.9rem; color: #666; margin-top: 0.3rem">
+            Responsável pelo dashboard web e comunicação Wi-Fi do ESP32
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="avatar-placeholder">
+          <i class="fas fa-user"></i>
+        </div>
+        <div>
+          <strong>Christian Pereira da Silva</strong> - Documentação e Testes
+          <p style="font-size: 0.9rem; color: #666; margin-top: 0.3rem">
+            Responsável pelos manuais, relatórios e validação dos testes
+          </p>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Instrutor -->
+    <div
+      style="
+        background: linear-gradient(135deg, #003366 0%, #002244 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 20px;
+        margin: 2rem 0;
+        text-align: center;
+      "
+    >
+      <i
+        class="fas fa-chalkboard-teacher"
+        style="font-size: 3rem; color: #e63946; margin-bottom: 1rem"
+      ></i>
+      <h3 style="color: white; margin-bottom: 0.5rem">Instrutor Responsável</h3>
+      <p style="font-size: 1.3rem; font-weight: 600">Prof. Elvis Tamagno</p>
+      <p style="opacity: 0.9">
+        Técnico em Desenvolvimento de Sistemas | CREA: 123456-7
+      </p>
+      <p style="margin-top: 1rem"></p>
+    </div>
+
+    <!-- Agradecimentos -->
+    <div class="agradecimentos">
+      <i
+        class="fas fa-heart"
+        style="color: #e63946; font-size: 3rem; margin-bottom: 1rem"
+      ></i>
+      <h3 style="color: #003366; margin-bottom: 1rem">
+        Agradecimentos especiais
+      </h3>
+      <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto">
+        À coordenação do SENAI pela infraestrutura e suporte técnico, à Festo
+        Didactic pela bancada de ensino, e a todos que contribuíram para a
+        realização deste projeto.
+      </p>
+    </div>
+
+    <script>
+      // Função para alternar entre as páginas
+      function mostrarPagina(paginaId) {
+        // Esconde todas as páginas
+        const paginas = document.querySelectorAll(".pagina");
+        paginas.forEach((pagina) => {
+          pagina.classList.remove("ativa");
+        });
+
+        // Mostra a página selecionada
+        const paginaSelecionada = document.getElementById(paginaId);
+        if (paginaSelecionada) {
+          paginaSelecionada.classList.add("ativa");
+        }
+
+        // Atualiza a classe active no menu
+        const navItems = document.querySelectorAll(".nav-item");
+        navItems.forEach((item) => {
+          item.classList.remove("active");
+        });
+
+        // Encontra o item do menu clicado e adiciona active
+        const itemClicado = Array.from(navItems).find(
+          (item) =>
+            item.getAttribute("onclick") === `mostrarPagina('${paginaId}')`
+        );
+        if (itemClicado) {
+          itemClicado.classList.add("active");
+        }
+      }
+
+      // Inicializa a página ativa quando o documento carregar
+      document.addEventListener("DOMContentLoaded", function () {
+        // Garante que a página inicial está ativa
+        const paginaInicial = document.getElementById("inicio");
+        if (paginaInicial) {
+          paginaInicial.classList.add("ativa");
+        }
+
+        // Adiciona evento de clique para os placeholders de imagem (opcional)
+        const placeholders = document.querySelectorAll(
+          ".main-image-placeholder, .sidebar-image-placeholder, .logo-placeholder"
+        );
+        placeholders.forEach((placeholder) => {
+          placeholder.addEventListener("click", function () {
+            alert("Espaço reservado para inserir imagem. Em desenvolvimento.");
+          });
+        });
+
+        // Adiciona efeito hover nos cards
+        const cards = document.querySelectorAll(
+          ".credito-card, .estrutura-card, .checklist-card"
+        );
+        cards.forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-5px)";
+            this.style.boxShadow = "0 10px 25px rgba(0,51,102,0.15)";
+          });
+          card.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0)";
+            this.style.boxShadow = "0 4px 8px rgba(0,0,0,0.02)";
+          });
+        });
+      });
+
+      // Função para imprimir a página (útil para documentação)
+      function imprimirPagina() {
+        window.print();
+      }
+
+      // Função para voltar ao topo
+      function voltarAoTopo() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      // Adiciona botão de voltar ao topo quando a página rolar
+      window.addEventListener("scroll", function () {
+        const footer = document.querySelector(".footer");
+        if (!document.querySelector(".btn-topo")) {
+          const btnTopo = document.createElement("button");
+          btnTopo.innerHTML = '<i class="fas fa-arrow-up"></i>';
+          btnTopo.className = "btn-topo";
+          btnTopo.style.position = "fixed";
+          btnTopo.style.bottom = "20px";
+          btnTopo.style.right = "20px";
+          btnTopo.style.backgroundColor = "#e63946";
+          btnTopo.style.color = "white";
+          btnTopo.style.border = "none";
+          btnTopo.style.borderRadius = "50%";
+          btnTopo.style.width = "50px";
+          btnTopo.style.height = "50px";
+          btnTopo.style.fontSize = "1.2rem";
+          btnTopo.style.cursor = "pointer";
+          btnTopo.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
+          btnTopo.style.zIndex = "1000";
+          btnTopo.style.display = "none";
+          btnTopo.onclick = voltarAoTopo;
+          document.body.appendChild(btnTopo);
+        }
+
+        const btnTopo = document.querySelector(".btn-topo");
+        if (window.scrollY > 300) {
+          btnTopo.style.display = "block";
+        } else {
+          btnTopo.style.display = "none";
+        }
+      });
+    </script>
+  </section>
+</main>

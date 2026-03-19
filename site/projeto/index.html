@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/projeto/style.css">
+    <title>SENAI | Bancada Festo OSR241T com ESP32</title>
+    <!-- Fontes e ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+</html>
+
+</style>
+</head>
+<body>
+<header class="header">
+<div class="header-container">
+    <div class="logo-area">
+        <!-- ESPAÇO RESERVADO PARA LOGO PRINCIPAL -->
+        <div class="logo-placeholder">
+            <div>
+                <span><img src="/imagem/senai-768x432.jpeg" alt="" id="logo"></span>
+            </div>
+        </div>
+        <div class="titulo-bancada">
+            <strong>Bancada Festo OSR241T</strong>
+            Automação com ESP32
+        </div>
+    </div>
+    <!-- ESPAÇO RESERVADO PARA LOGO SECUNDÁRIO -->
+    <div class="header-logo-direita">
+        <div>
+            <i class="fas fa-industry"></i>
+            <span style="display: block; font-size: 0.5rem;">FESTO</span>
+        </div>
+    </div>
+</div>
+</header>
+
+<nav class="nav-bar">
+<ul class="nav-menu">
+    <li class="nav-item active" data-target="inicio"><i class="fas fa-home"></i> Início</li>
+    <li class="nav-item" data-target="estrutura"><i class="fas fa-cogs"></i> Estrutura e Função</li>
+    <li class="nav-item" data-target="io"><i class="fas fa-list"></i> Lista de entradas e saídas</li>
+    <li class="nav-item" data-target="creditos"><i class="fas fa-star"></i> Créditos</li>
+</ul>
+</nav>
+
+<main class="main-container">
+<section class="content-area">
+    <h1 class="page-title">Festo 14 <span style="font-size: 1rem; color: #e63946; margin-left: 1rem;">ESP32 Controller</span></h1>
+    
+    <!-- ESPAÇO RESERVADO PARA FOTO PRINCIPAL -->
+    <div class="main-image-placeholder">
+
+        
+        <span style="font-size: 0.8rem; color: #666;"><img src="/imagem/7d3450c2-ce55-4fbf-8787-cd50a5f3746c.jpg" alt=""></span>
+    </div>
+
+    <div class="sub-info">
+        <div class="info-geral">
+            <p><i class="fas fa-industry" style="color: #003366; margin-right: 8px;"></i> A bancada de aprendizagem tecnológica da Festo Didactic é baseada em diferentes requisitos educacionais e profissionais para simulação de alguns processos pneumáticos.</p>
+            <p><i class="fas fa-microchip" style="color: #003366; margin-right: 8px;"></i> Os sistemas e estações do sistema modular de produção, agora integrados com <strong>microcontrolador ESP32</strong>, tornam possível a formação e educação continuada orientada para a realidade operacional.</p>
+            <p><i class="fas fa-exclamation-triangle" style="color: #e63946; margin-right: 8px;"></i> Aqui você encontra um passo a passo detalhado das aplicações e os requisitos básicos para manuseio seguro e uso sem problemas!</p>
+        </div>
+    </div>
+
+    <h2 style="color: #003366; margin: 2rem 0 1rem; font-size: 1.8rem;">🔧 ANTES DE OPERAR A BANCADA CONFIRA OS SEGUINTES PASSOS</h2>
+
+    <div class="checklist-grid">
+        <div class="checklist-card">
+            <h3><i class="fas fa-bolt"></i> Elétrica / Controle</h3>
+            <ul class="checklist-items">
+                <li><i class="fas fa-check-circle"></i> 1° Ligado na tomada (24V)</li>
+                <li><i class="fas fa-check-circle"></i> 2° Chave que liga o ESP32 (fonte 5V)</li>
+                <li><i class="fas fa-check-circle"></i> 3° Cabo USB (USB micro) para conectar o software do computador ao ESP32</li>
+            </ul>
+        </div>
+        <div class="checklist-card">
+            <h3><i class="fas fa-wind"></i> Pneumática</h3>
+            <ul class="checklist-items">
+                <li><i class="fas fa-check-circle"></i> 1° Conectado à pneumática (mangueiras)</li>
+                <li><i class="fas fa-check-circle"></i> 2° Chave da válvula aberta</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+        <div class="checklist-card">
+            <h3><i class="fas fa-network-wired"></i> Distribuição</h3>
+            <ul class="checklist-items">
+                <li><i class="fas fa-check-circle"></i> Confira se o cabo distribuidor está conectado à central eletrônica (shield ESP32).</li>
+            </ul>
+        </div>
+        <div class="checklist-card">
+            <h3><i class="fas fa-tachometer-alt"></i> Rede pneumática</h3>
+            <ul class="checklist-items">
+                <li><i class="fas fa-check-circle"></i> Confira que a rede distribuidora de pneumática está ativada.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 style="color: #003366; margin: 2rem 0 1rem; font-size: 1.8rem;">⚙️ LOCAL DE TRABALHO</h2>
+    <div class="info-geral" style="background: #e9f0fa; padding: 1.5rem; border-radius: 24px;">
+        <p><i class="fas fa-check" style="color: #2ecc71;"></i> Para iniciar a estação você precisa:</p>
+        <ul style="list-style: none; margin-top: 1rem;">
+            <li><i class="fas fa-arrow-right" style="color: #e63946;"></i> A estação montada e ajustada</li>
+            <li><i class="fas fa-arrow-right" style="color: #e63946;"></i> Um painel de controle</li>
+            <li><i class="fas fa-arrow-right" style="color: #e63946;"></i> Uma placa ESP32 (com Wi-Fi/Bluetooth)</li>
+            <li><i class="fas fa-arrow-right" style="color: #e63946;"></i> Shield de relés ou módulos de saída para 24V</li>
+            <li><i class="fas fa-arrow-right" style="color: #e63946;"></i> Fonte de alimentação 24V e 5V (para ESP32)</li>
+            <li><i class="fas fa-arrow-right" style="color: #e63946;"></i> Alimentação de ar comprimido com 600 kPa (6 bar), potência de sucção de aprox. 50 l/min</li>
+            <li><i class="fas fa-arrow-right" style="color: #e63946;"></i> Um PC com Arduino IDE ou PlatformIO instalado (programação ESP32)</li>
+        </ul>
+    </div>
+
+    <div class="seguranca-lista">
+        <h4><i class="fas fa-shield-alt"></i> INSTRUÇÕES DE SEGURANÇA</h4>
+        <ul>
+            <li><i class="fas fa-exclamation"></i> NÃO passe da pressão permitida de 600 kPa (6 bar) na bancada</li>
+            <li><i class="fas fa-exclamation"></i> Utilize apenas tensões baixas: 24V para atuadores, 5V/3.3V para ESP32</li>
+            <li><i class="fas fa-exclamation"></i> Se a bancada não estiver pronta, não ligue o ar comprimido até que todas as conexões de mangueira tenham sido feitas</li>
+            <li><i class="fas fa-exclamation"></i> Não desconecte as mangueiras sob pressão</li>
+            <li><i class="fas fa-exclamation"></i> Tenha especial cuidado ao ligar o ar comprimido: os cilindros podem estender ou retrair automaticamente</li>
+            <li><i class="fas fa-exclamation"></i> Confira se todos os componentes estão firmemente na placa</li>
+        </ul>
+        <div class="badge-warning">
+            <i class="fas fa-bell"></i> ATENÇÃO: SE TODOS OS ITENS ACIMA NÃO ESTIVEREM CORRETOS, PROCURE O RESPONSÁVEL PELA BANCADA.
+        </div>
+    </div>
+</section>
+
+<aside class="sidebar">
+    <h3><i class="fas fa-microchip"></i> ESP32 na Festo</h3>
+    <!-- ESPAÇO RESERVADO PARA FOTO NA SIDEBAR -->
+    <div class="sidebar-image-placeholder">
+        
+        <span style="font-size: 0.7rem;"><img  src="/imagem/WhatsApp Image 2026-03-18 at 08.39.50.jpeg" alt="" id="esp32"></span>
+    </div>
+    <div class="info-box">
+        <p><i class="fas fa-wifi"></i> <strong>Wi-Fi/Bluetooth</strong> - Integração com IHM via web</p>
+        <p><i class="fas fa-memory"></i> <strong>Flash:</strong> 4MB | <strong>RAM:</strong> 520KB</p>
+        <p><i class="fas fa-tachometer-alt"></i> <strong>Clock:</strong> 240 MHz</p>
+    </div>
+
+    <!-- Segundo espaço para foto/info -->
+    <div class="sidebar-image-placeholder" style="height: 120px;">
+        <i class="fas fa-project-diagram"></i>
+        <span>Diagrama da bancada</span>
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+        <p style="font-weight: 600; color: #003366;"><i class="fas fa-check-circle" style="color: #2ecc71;"></i> Vantagens do ESP32:</p>
+        <ul style="list-style: none; margin-top: 0.8rem;">
+            <li><i class="fas fa-angle-right" style="color: #e63946;"></i> Programação em C/C++ (Arduino/ESP-IDF)</li>
+            <li><i class="fas fa-angle-right" style="color: #e63946;"></i> Baixo custo e grande comunidade</li>
+            <li><i class="fas fa-angle-right" style="color: #e63946;"></i> Conectividade nativa</li>
+        </ul>
+    </div>
+</aside>
+</main>
+
+<footer class="footer">
+<div style="max-width: 1300px; margin: 0 auto;">
+    <p style="font-size: 1.2rem; margin-bottom: 1rem;"><i class="fas fa-graduation-cap"></i> SENAI - Serviço Nacional de Aprendizagem Industrial</p>
+    <p>Bancada Didática Festo OSR241T | Versão 2.0 - Controlador ESP32</p>
+    <p style="margin-top: 1rem; opacity: 0.7;">© 2026 - Todos os direitos reservados</p>
+</div>
+</footer>
+</body>
+<script src="script.js"></script>
+</html>s
